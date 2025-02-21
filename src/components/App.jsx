@@ -1,18 +1,19 @@
-// import { useState } from "react";
-// import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-import "../components/App.css";
-
-import Product from "./Product";
+import Profile from "../components/Profile/Profile";
+import userData from "../userData.json";
+import FriendList from "../components/FriendList/FriendList";
+import friends from "../friends.json";
 
 export default function App() {
   return (
-    <div>
-      <h1>Best selling</h1>
-
-      <Product />
-      <Product />
-      <Product />
-    </div>
+    <>
+      <Profile
+        name={userData.username}
+        tag={userData.tag}
+        location={userData.location}
+        image={userData.avatar}
+        stats={userData.stats}
+      />
+      <FriendList friends={friends} />
+    </>
   );
 }
